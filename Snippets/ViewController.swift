@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var data : [SnippetData] = []
+    
+    @IBAction func createNewSnippet(_ sender: Any)
+    {
+     data.append(SnippetData())
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
