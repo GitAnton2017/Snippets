@@ -14,8 +14,27 @@ class ViewController: UIViewController {
     
     @IBAction func createNewSnippet(_ sender: Any)
     {
-     data.append(SnippetData())
+        let alert = UIAlertController(title: "Select Snippet Type", message: nil, preferredStyle: .actionSheet)
+        
+        let textAction = UIAlertAction(title: "TEXT", style: .default)
+        {
+            (alert: UIAlertAction)->Void in self.data.append(SnippetData(type: .text))
+        }
+        
+        let photoAction = UIAlertAction(title: "PHOTO", style: .default)
+        {
+            (alert: UIAlertAction)->Void in self.data.append(SnippetData(type: .photo))
+        }
+        
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
+        
+        alert.addAction(textAction)
+        alert.addAction(photoAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

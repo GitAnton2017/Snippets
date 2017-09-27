@@ -1,7 +1,18 @@
+
+
+
 struct SnippetData
 {
-    init()
+    let type: SnippetType
+    init(type: SnippetType)
     {
-     print ("New Snippet Created!")
+     self.type = type
+     print ("New Snippet of type \(type.rawValue) Created!")
     }
+}
+
+enum SnippetType: String
+{
+    case text = "Text"
+    case photo = "Photo"
 }
