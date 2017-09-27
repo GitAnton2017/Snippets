@@ -15,6 +15,7 @@
 		A7503E231F7BB83500F846E7 /* SnippetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503E221F7BB83500F846E7 /* SnippetsTests.swift */; };
 		A7503E2E1F7BB83500F846E7 /* SnippetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503E2D1F7BB83500F846E7 /* SnippetsUITests.swift */; };
 		A7503E3C1F7BB8B700F846E7 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503E3B1F7BB8B700F846E7 /* SnippetData.swift */; };
+		A7503E3E1F7BD77D00F846E7 /* TextSnippetEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503E3D1F7BD77D00F846E7 /* TextSnippetEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A7503E2D1F7BB83500F846E7 /* SnippetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsUITests.swift; sourceTree = "<group>"; };
 		A7503E2F1F7BB83500F846E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7503E3B1F7BB8B700F846E7 /* SnippetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		A7503E3D1F7BD77D00F846E7 /* TextSnippetEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSnippetEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				A7503E0D1F7BB83400F846E7 /* AppDelegate.swift */,
 				A7503E3B1F7BB8B700F846E7 /* SnippetData.swift */,
 				A7503E0F1F7BB83400F846E7 /* ViewController.swift */,
+				A7503E3D1F7BD77D00F846E7 /* TextSnippetEntryViewController.swift */,
 				A7503E111F7BB83400F846E7 /* Main.storyboard */,
 				A7503E141F7BB83400F846E7 /* Assets.xcassets */,
 				A7503E161F7BB83400F846E7 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7503E3E1F7BD77D00F846E7 /* TextSnippetEntryViewController.swift in Sources */,
 				A7503E101F7BB83400F846E7 /* ViewController.swift in Sources */,
 				A7503E0E1F7BB83400F846E7 /* AppDelegate.swift in Sources */,
 				A7503E3C1F7BB8B700F846E7 /* SnippetData.swift in Sources */,

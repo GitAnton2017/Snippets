@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBAction func createNewSnippet(_ sender: Any)
     {
-        let alert = UIAlertController(title: "Select Snippet Type", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select Snippet Type", message: nil, preferredStyle: .alert)
         
         let textAction = UIAlertAction(title: "TEXT", style: .default)
         {
@@ -26,7 +26,8 @@ class ViewController: UIViewController {
             (alert: UIAlertAction)->Void in self.data.append(SnippetData(type: .photo))
         }
         
-        let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .destructive, handler: nil)
+    
         
         alert.addAction(textAction)
         alert.addAction(photoAction)
@@ -35,12 +36,14 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

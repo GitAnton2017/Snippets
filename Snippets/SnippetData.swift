@@ -1,7 +1,11 @@
 
+enum SnippetType: String
+{
+    case text = "Text"
+    case photo = "Photo"
+}
 
-
-struct SnippetData
+class SnippetData
 {
     let type: SnippetType
     init(type: SnippetType)
@@ -11,8 +15,16 @@ struct SnippetData
     }
 }
 
-enum SnippetType: String
+class TextData : SnippetData
 {
-    case text = "Text"
-    case photo = "Photo"
+    let text: String
+    init (text: String)
+    {
+     self.text = text
+     super.init(type: .text)
+     print ("New Text Snippet with text \(text) Created!")
+        
+    }
 }
+
+
