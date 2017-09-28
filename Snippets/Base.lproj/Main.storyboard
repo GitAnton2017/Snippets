@@ -21,7 +21,8 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eGh-k4-4bz"/>
-                                    <barButtonItem title="NEW" id="n8J-Xp-CKY" userLabel="NEW">
+                                    <barButtonItem springLoaded="YES" systemItem="compose" id="n8J-Xp-CKY" userLabel="NEW">
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="createNewSnippet:" destination="BYZ-38-t0r" id="Bxo-Kj-iGt"/>
                                         </connections>
@@ -30,17 +31,54 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="IAn-7W-iEd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B9H-xh-6ba"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IAn-7W-iEd" secondAttribute="trailing" id="Lz4-Y4-DOy"/>
                             <constraint firstItem="IAn-7W-iEd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hft-de-gnL"/>
-                            <constraint firstItem="IAn-7W-iEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uHb-eh-wTj"/>
+                            <constraint firstItem="IAn-7W-iEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ozc-dH-HY8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="264.80000000000001" y="-1.3493253373313345"/>
+        </scene>
+        <!--Text Snippet Entry View Controller-->
+        <scene sceneID="iQP-2d-K6Y">
+            <objects>
+                <viewController storyboardIdentifier="textSnippetEntry" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRC-xV-ja3" customClass="TextSnippetEntryViewController" customModule="Snippets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a6a-Fb-gYs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-sW-e6r">
+                                <rect key="frame" x="5" y="25" width="365" height="637"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fRC-xV-ja3" id="dVs-pt-HV7"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450981740000002" green="0.48627451059999999" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="snR-pW-YKn" firstAttribute="bottom" secondItem="UpX-sW-e6r" secondAttribute="bottom" constant="5" id="D95-35-BWM"/>
+                            <constraint firstItem="UpX-sW-e6r" firstAttribute="top" secondItem="snR-pW-YKn" secondAttribute="top" constant="5" id="plD-ce-LI3"/>
+                            <constraint firstItem="snR-pW-YKn" firstAttribute="trailing" secondItem="UpX-sW-e6r" secondAttribute="trailing" constant="5" id="r1t-pj-V1s"/>
+                            <constraint firstItem="UpX-sW-e6r" firstAttribute="leading" secondItem="snR-pW-YKn" secondAttribute="leading" constant="5" id="rve-CL-rZ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="snR-pW-YKn"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="UpX-sW-e6r" id="X8N-8P-oP1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWG-64-8im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="6.746626686656672"/>
         </scene>
     </scenes>
 </document>
