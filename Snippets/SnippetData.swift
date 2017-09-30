@@ -1,3 +1,5 @@
+import Foundation
+import UIKit
 
 enum SnippetType: String
 {
@@ -11,7 +13,7 @@ class SnippetData
     init(type: SnippetType)
     {
      self.type = type
-     print ("New Snippet of type \(type.rawValue) Created!")
+     print ("New Snippet of type \(type.rawValue) has been Created!")
     }
 }
 
@@ -22,7 +24,19 @@ class TextData : SnippetData
     {
      self.text = text
      super.init(type: .text)
-     print ("New Text Snippet with text \(text) Created!")
+     print ("New TEXT Snippet with text \(text) has been Created!")
+        
+    }
+}
+
+class PhotoData : SnippetData
+{
+    let photo: UIImage
+    init (photo: UIImage)
+    {
+        self.photo = photo
+        super.init(type: .photo)
+        print ("New PHOTO Snippet with image \(photo) has been Created!")
         
     }
 }
