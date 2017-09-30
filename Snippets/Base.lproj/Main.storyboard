@@ -40,7 +40,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="textSnippetCell" selectionStyle="default" indentationWidth="10" id="Upw-tw-ZAc" customClass="TextSnippetCell" customModule="Snippets" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="textSnippetCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="textSnippetCell" id="Upw-tw-ZAc" customClass="TextSnippetCell" customModule="Snippets">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Upw-tw-ZAc" id="q2H-8N-vnf">
@@ -62,13 +62,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="textSnippetCell">
+                                            <accessibilityTraits key="traits" none="YES"/>
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                         <connections>
                                             <outlet property="label" destination="fbK-XQ-egG" id="Pfh-ir-Xna"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="photoSnippetCell" selectionStyle="default" indentationWidth="10" id="ecc-8b-r7A" customClass="PhotoSnippetCell" customModule="Snippets" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="photoSnippetCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoSnippetCell" id="ecc-8b-r7A" customClass="PhotoSnippetCell" customModule="Snippets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ecc-8b-r7A" id="kD0-1D-NBn">
@@ -115,6 +116,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ly7-GR-SBs" id="iqK-m7-XxS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,13 +13,26 @@ class ViewController: UIViewController {
     var data : [SnippetData] = []
     let imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         imagePicker.delegate = self
         
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        tableView.reloadData()
+    }
+
     
     @IBAction func createNewSnippet(_ sender: Any)
     {
@@ -100,16 +113,36 @@ extension ViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-      return 0
+      return data.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+      return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-      return UITableViewCell()
+      let cell: UITableViewCell
+        
+        switch data[indexPath.row].type
+        {
+         case .text:
+            cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
+           (cell as! TextSnippetCell).label.text = (data[indexPath.row] as! TextData).text
+         case .photo:
+            cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
+            (cell as! PhotoSnippetCell).photo.image = (data[indexPath.row] as! PhotoData).photo
+        }
+      
+      return cell
+        
     }
     
     
+    
 }
+
 
 
 
