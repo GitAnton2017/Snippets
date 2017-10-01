@@ -123,16 +123,22 @@ extension ViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-      let cell: UITableViewCell
+        let cell: UITableViewCell
+        let df = DateFormatter()
+        df.dateStyle = .medium
+        df.timeStyle = .medium
+        df.locale = Locale(identifier: "ru-RU")
         
         switch data[indexPath.row].type
         {
          case .text:
             cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
            (cell as! TextSnippetCell).label.text = (data[indexPath.row] as! TextData).text
+           (cell as! TextSnippetCell).dateLabel.text = df.string(from: data[indexPath.row].dateStamp)
          case .photo:
             cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
             (cell as! PhotoSnippetCell).photo.image = (data[indexPath.row] as! PhotoData).photo
+            (cell as! PhotoSnippetCell).dateLabel.text = df.string(from: data[indexPath.row].dateStamp)
         }
       
       return cell
